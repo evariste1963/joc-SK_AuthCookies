@@ -13,12 +13,15 @@ export let form: ActionData
         <input id="username"  name="username" type="text" required>
     </div>
     <div>
-        <label for="username" placeholder="enter password">username</label>
+        <label for="password" placeholder="enter password">password</label>
         <input id="password"  name="password" type="password" required>
     </div>
-<button type="submit">Register</button>
-</form>
+
+
 
 {#if form?.user}
 <p class="error">Username is taken</p>
 {/if}
+
+<button type="submit">Register</button>
+</form>
