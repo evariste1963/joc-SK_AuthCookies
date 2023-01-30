@@ -11,21 +11,21 @@ datasource db {
 }
 
 model User {
-  id String @id @default(uuid())
-  username String @unique
-  passwordHash String
+  id            String @id @default(uuid())
+  username      String @unique
+  passwordHash  String
   userAuthToken String @unique
 
-createAt DateTime @default(now())
-updatAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-role  Roles @relation(fields: [roleId], references: [id])
-roleId Int
+  role   Roles @relation(fields: [roleId], references: [id])
+  roleId Int
 }
 
-model Roles{
-  id Int @id @default(autoincrement())
+model Roles {
+  id   Int    @id @default(autoincrement())
   name String @unique
   User User[]
-
 }
+
