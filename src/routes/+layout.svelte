@@ -19,7 +19,7 @@
 	<a href="/admin">Admin</a>
 	
 
-	<form action="/logout" method="POST" use:enhance={() => {
+	<form class="logout" action="/logout" method="POST" use:enhance={() => {
 		return async ({ result }) => {
 			//rerun the 'load' function for the page
 			//https://kit.svelte.dev.docs.modules#app-navigation-invalidateall
