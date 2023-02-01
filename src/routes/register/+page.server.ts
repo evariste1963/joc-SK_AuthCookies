@@ -23,7 +23,7 @@ const register: Action = async ({ request }) => {
     const password = data.get('password')
 
    if( typeof username !== 'string' || typeof password !== 'string' || !username || ! password){
-    return fail(400, { invalid: true})
+    return fail(500, { invalid: true})
    }
 
    const user = await db.user.findUnique({ where:{username}})
