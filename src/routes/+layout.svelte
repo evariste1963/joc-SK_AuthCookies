@@ -11,8 +11,12 @@
 
 <nav>
 	{#if !$page.data.user}
+	{#if !$page.url.pathname.startsWith('/login')}
 		<a href="/login">Login</a>
+		{/if}
+		{#if !$page.url.pathname.startsWith('/register')}
 		<a href="/register">Register</a>
+		{/if}
 	{/if}
 
 	{#if $page.data.user}
